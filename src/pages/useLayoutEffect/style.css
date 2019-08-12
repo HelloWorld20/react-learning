@@ -1,0 +1,12 @@
+.drift {
+    animation: drift 1s ease-in-out infinite;
+}
+
+@keyframes drift {
+    0%, 100%{
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(100px)
+    }
+}
