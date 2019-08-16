@@ -1,4 +1,5 @@
 import React from 'react';
+import { routeList } from './route';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,6 +19,17 @@ function App() {
         >
           Learn React
         </a>
+        <ul>
+          {
+            Object.keys(routeList).map(key => {
+              return (
+                <li key={key}>
+                  <a className='App-link' href={`/#/${key}`}>{key}</a>
+                </li>
+              )
+            })
+          }
+        </ul>
       </header>
     </div>
   );

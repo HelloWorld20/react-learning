@@ -2,7 +2,7 @@
  * @Author: jianghong.wei 
  * @Date: 2019-08-14 18:47:25 
  * @Last Modified by: jianghong.wei
- * @Last Modified time: 2019-08-14 18:58:07
+ * @Last Modified time: 2019-08-16 16:13:25
  */
 
 import React, { useContext, useState, createElement } from "react";
@@ -17,9 +17,10 @@ class CreateKey {
     }
 }
 
-console.log(React.Fragment)
+
 
 function NewCompo() {
+  console.log(createElement)
   const [inputVal, setInputVal] = useState("input");
   const keyCreator = new CreateKey();
   const getKey = keyCreator.get;

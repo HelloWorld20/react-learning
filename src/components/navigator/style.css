@@ -6,3 +6,8 @@
     position: relative;
     left: 0;top: 0;
 }
+
+.e-home{
+    float: right;
+    margin: 5px;
+}

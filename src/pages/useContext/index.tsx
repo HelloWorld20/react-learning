@@ -6,7 +6,7 @@
  * @Last Modified time: 2019-07-31 15:38:58
  */
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { StoreContext } from "../../store";
 import useClock from '../../hooks/clock';
 import "./style.css";

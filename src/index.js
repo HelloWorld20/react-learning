@@ -4,13 +4,12 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Root from './store';
 
-import Navicator from './components/navigator'; 
+import Navicator from './components/navigator';
 import Route from "./route";
 
-
 ReactDOM.render(<Root>
-    <Navicator/>
-    <Route/>
+    <Navicator />
+    <Route />
 </Root>, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

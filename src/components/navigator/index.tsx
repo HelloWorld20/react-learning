@@ -16,6 +16,8 @@ export default function() {
         trigger new and old
       </button>
       current version: { state.isNewVersion ? 'new' : 'old' }
+        
+      <a className="e-home" href="#/">go home</a>
     </nav>
   );
 }
