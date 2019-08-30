@@ -24,7 +24,7 @@ function App() {
             Object.keys(routeList).map(key => {
               return (
                 <li key={key}>
-                  <a className='App-link' href={`/#/${key}`}>{key}</a>
+                  <a className='App-link' href={`#/${key}`}>{key}</a>
                 </li>
               )
             })

@@ -6,7 +6,7 @@ import Root from './store';
 
 import Navicator from './components/navigator';
 import Route from "./route";
-
+window.React = React;
 ReactDOM.render(<Root>
     <Navicator />
     <Route />

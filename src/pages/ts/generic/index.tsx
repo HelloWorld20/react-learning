@@ -2,18 +2,12 @@
  * @Author: jianghong.wei 
  * @Date: 2019-08-14 13:56:06 
  * @Last Modified by: jianghong.wei
- * @Last Modified time: 2019-08-14 18:19:15
+ * @Last Modified time: 2019-08-20 11:06:44
  */
 
 import React from "react";
 
 export default function() {  
-  (window as any).React = React;
-
-  console.log(React.createContext('1').Consumer)
-  console.log(React.createElement(
-    'input'
-  ))
 
   // 一个普通的泛型，T代表任意
   // identity的意义大概是，该方法接收任意类型参数，然后返回与输入相同类型的参数

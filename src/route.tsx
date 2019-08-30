@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, HashRouter, Redirect } from "react-router-dom";
+import { Route, Switch, HashRouter, Redirect, BrowserRouter, MemoryRouter  } from "react-router-dom";
 
 import App from "./App";
 import UseState from "./pages/useState";
@@ -15,7 +15,9 @@ import PureConponent from "./pages/pureConponent&memo/pure";
 import Memo from "./pages/pureConponent&memo/memo";
 import CreateElement from "./pages/element/createElement";
 import Lazy from "./pages/lazy&suspense";
-import Test from "./pages/test";
+import Test from "./pages/test/scroll";
+import RoutePage from "./pages/route";
+import Popup from './pages/hoc/popup'
 
 export const routeList = {
   hook: UseState,
@@ -31,7 +33,8 @@ export const routeList = {
   memo: Memo,
   createElement: CreateElement,
   lazy: Lazy,
-  test: Test
+  test: Test,
+  route: RoutePage,
 }
 
 function getRoutes(routeList: Record<string, any>) {

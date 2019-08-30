@@ -15,7 +15,7 @@ export const StoreContext = React.createContext<IContext>({
   dispatcher: () => {}
 });
 
-(window as any).StoreContext = StoreContext;
+// (window as any).StoreContext = StoreContext;
 
 const Root = (props: any) => {
   const [state, dispatcher] = useReducer(store, initState);
