@@ -24,8 +24,9 @@ import CreateElement from "./pages/element/createElement";
 import Lazy from "./pages/lazy&suspense";
 // import Test from "./pages/test/scroll";
 import RoutePage from "./pages/route";
-import Popup from "./pages/hoc/popup";
+// import Popup from "./pages/hoc/popup";
 import Playground from "./pages/playground";
+import ApartRadar from "./pages/apart-radar";
 
 export const routeList = {
   hook: UseState,
@@ -41,6 +42,7 @@ export const routeList = {
   memo: Memo,
   createElement: CreateElement,
   lazy: Lazy,
+  apratRadar: ApartRadar,
   playground: Playground,
   // test: Test,
   route: RoutePage,
