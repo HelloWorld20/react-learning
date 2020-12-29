@@ -1,10 +1,10 @@
 const data: ApartmentData = {
   name: "第三金碧",
-  prise: 3,
+  prise: 44039,
   totalPrise: 300,
   zone: "海珠区",
   district: "石溪",
-  advantage: "",
+  advantage: "恒大物业、小区环境好，地铁口近。直达珠江新城地铁",
   disadvatage: "",
   score: {
     transport: {
@@ -19,7 +19,7 @@ const data: ApartmentData = {
       data: 70,
       desc: "",
     },
-    house: {
+    quality: {
       data: 70,
       desc: "",
     },

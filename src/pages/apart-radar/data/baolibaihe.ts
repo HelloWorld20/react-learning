@@ -1,11 +1,11 @@
 const data: ApartmentData = {
   name: "保利百合",
-  prise: 3,
+  prise: 43109,
   totalPrise: 300,
   zone: "海珠区",
   district: "石溪",
-  advantage: "",
-  disadvatage: "",
+  advantage: "小区环境好、保利物业",
+  disadvatage: "地铁远、房龄旧",
   score: {
     transport: {
       data: 65,
@@ -19,7 +19,7 @@ const data: ApartmentData = {
       data: 60,
       desc: "",
     },
-    house: {
+    quality: {
       data: 65,
       desc: "",
     },

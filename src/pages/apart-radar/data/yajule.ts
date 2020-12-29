@@ -1,11 +1,11 @@
 const data: ApartmentData = {
-  name: "广州雅居乐",
-  prise: 3,
+  name: "广州雅居乐雅逸庭",
+  prise: 33914,
   totalPrise: 300,
-  zone: "海珠区",
-  district: "石溪",
-  advantage: "",
-  disadvatage: "",
+  zone: "番禺区",
+  district: "南村万博",
+  advantage: "小区、房子特别好、学区不错、离交通枢纽南村万博一个地铁站",
+  disadvatage: "离地铁口太远，离外面太远，适合养老，不适合我们",
   score: {
     transport: {
       data: 70,
@@ -19,7 +19,7 @@ const data: ApartmentData = {
       data: 80,
       desc: "",
     },
-    house: {
+    quality: {
       data: 90,
       desc: "",
     },

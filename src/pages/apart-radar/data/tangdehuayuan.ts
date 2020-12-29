@@ -1,11 +1,11 @@
 const data: ApartmentData = {
   name: "棠德花园",
-  prise: 3,
+  prise: 31092,
   totalPrise: 300,
-  zone: "海珠区",
-  district: "石溪",
-  advantage: "",
-  disadvatage: "",
+  zone: "天河区",
+  district: "棠下",
+  advantage: "天河，离市中心近",
+  disadvatage: "旧、地铁口距离远、小区环境差、周围城中村",
   score: {
     transport: {
       data: 70,
@@ -19,7 +19,7 @@ const data: ApartmentData = {
       data: 60,
       desc: "",
     },
-    house: {
+    quality: {
       data: 65,
       desc: "",
     },

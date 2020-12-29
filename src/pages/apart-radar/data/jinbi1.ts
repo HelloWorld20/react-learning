@@ -1,11 +1,11 @@
 const data: ApartmentData = {
   name: "第一金碧",
-  prise: 3,
+  prise: 38189,
   totalPrise: 300,
   zone: "海珠区",
   district: "石溪",
-  advantage: "",
-  disadvatage: "",
+  advantage: "恒大物业、小区环境好、性价比高，地铁上盖。直达珠江新城地铁",
+  disadvatage: "户型略差",
   score: {
     transport: {
       data: 85,
@@ -19,7 +19,7 @@ const data: ApartmentData = {
       data: 70,
       desc: "",
     },
-    house: {
+    quality: {
       data: 65,
       desc: "",
     },

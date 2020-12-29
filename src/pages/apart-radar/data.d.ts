@@ -11,7 +11,7 @@ declare interface ApartScoreOption {
   /** 学区 */
   education: dataOption;
   /** 质量 */
-  house: dataOption;
+  quality: dataOption;
   /** 房龄 */
   age: dataOption;
   /** 户型 */

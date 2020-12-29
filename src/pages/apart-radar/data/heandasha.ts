@@ -1,14 +1,14 @@
 const data: ApartmentData = {
   name: "和安大厦",
-  prise: 3,
+  prise: 41683,
   totalPrise: 300,
   zone: "海珠区",
   district: "石溪",
-  advantage: "",
-  disadvatage: "",
+  advantage: "性价比高，地铁近。直达珠江新城地铁，房龄新",
+  disadvatage: "无学区",
   score: {
     transport: {
-      data: 82,
+      data: 84,
       desc: "",
     },
     enviranment: {
@@ -19,7 +19,7 @@ const data: ApartmentData = {
       data: 50,
       desc: "",
     },
-    house: {
+    quality: {
       data: 75,
       desc: "",
     },

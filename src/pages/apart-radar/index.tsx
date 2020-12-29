@@ -32,15 +32,15 @@ export default () => {
       },
       radar: {
         indicator: [
-          { name: "交通（transport）", max: 100 },
-          { name: "环境（enviranment）", max: 100 },
-          { name: "学区（education）", max: 100 },
-          { name: "质量（house）", max: 100 },
-          { name: "房龄（age）", max: 100 },
-          { name: "户型（style）", max: 100 },
-          { name: "升值空间（appreciation）", max: 100 },
-          { name: "配套设施（equipment）", max: 100 },
-          { name: "性价比（prise）", max: 100 },
+          { name: "交通", max: 100 },
+          { name: "环境", max: 100 },
+          { name: "学区", max: 100 },
+          { name: "质量", max: 100 },
+          { name: "房龄", max: 100 },
+          { name: "户型", max: 100 },
+          { name: "升值空间", max: 100 },
+          { name: "配套设施", max: 100 },
+          { name: "性价比", max: 100 },
         ],
       },
       series: [
@@ -87,7 +87,7 @@ export default () => {
 
   const columns = [
     {
-      title: "姓名",
+      title: "小区名称",
       dataIndex: "name",
       key: "name",
     },
