@@ -1,15 +1,15 @@
-import React, { createRef, RefObject } from "react";
+import React, { Component, createRef, RefObject } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import BScroll from "better-scroll";
 import "./style.css";
 interface IProps {}
 interface IState {
-  wrapper: RefObject<HTMLDivElement> ;
-  [key: string]: any
+  wrapper: RefObject<HTMLDivElement>;
+  [key: string]: any;
 }
 type Props = IProps & RouteComponentProps<any>;
 
-class Scroll extends Component<IProps, IScrollState> {
+class Scroll extends Component<Props, {}> {
   state = {
     wrapper: createRef(),
     beforePullDown: true,
@@ -25,7 +25,7 @@ class Scroll extends Component<IProps, IScrollState> {
         stop: 20,
       },
     });
-    Scroll.instance.on('pullingDown', this.pullingDownHandler);
+    Scroll.instance.on("pullingDown", this.pullingDownHandler);
   }
   componentWillUnmount() {
     Scroll.instance.destroy();
@@ -46,7 +46,7 @@ class Scroll extends Component<IProps, IScrollState> {
   };
 
   finishPullDown = async () => {
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       setTimeout(() => {
         Scroll.instance.finishPullDown();
         resolve();
@@ -61,7 +61,7 @@ class Scroll extends Component<IProps, IScrollState> {
   };
 
   requestData = async () => {
-    return new Promise(res => {
+    return new Promise((res) => {
       setTimeout(() => {
         res();
       }, 2000);
@@ -70,8 +70,8 @@ class Scroll extends Component<IProps, IScrollState> {
 
   render() {
     return (
-      <div className="pulldown" style={{ fontSize: '16px', height: '400px' }}>
-        <div ref={this.state.wrapper} className="pulldown-bswrapper">
+      <div className="pulldown" style={{ fontSize: "16px", height: "400px" }}>
+        <div className="pulldown-bswrapper">
           <div className="pulldown-scroller">
             <div className="pulldown-wrapper">
               {this.state.beforePullDown ? (
@@ -82,8 +82,8 @@ class Scroll extends Component<IProps, IScrollState> {
                 <div>
                   <span>
                     {this.state.isPullingDown
-                      ? 'loading...'
-                      : 'Refresh success'}
+                      ? "loading..."
+                      : "Refresh success"}
                   </span>
                 </div>
               )}

@@ -1,5 +1,12 @@
 import React from "react";
-import { Route, Switch, HashRouter, Redirect, BrowserRouter, MemoryRouter  } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  HashRouter,
+  Redirect,
+  BrowserRouter,
+  MemoryRouter,
+} from "react-router-dom";
 
 import App from "./App";
 import UseState from "./pages/useState";
@@ -15,9 +22,10 @@ import PureConponent from "./pages/pureConponent&memo/pure";
 import Memo from "./pages/pureConponent&memo/memo";
 import CreateElement from "./pages/element/createElement";
 import Lazy from "./pages/lazy&suspense";
-import Test from "./pages/test/scroll";
+// import Test from "./pages/test/scroll";
 import RoutePage from "./pages/route";
-import Popup from './pages/hoc/popup'
+import Popup from "./pages/hoc/popup";
+import Playground from "./pages/playground";
 
 export const routeList = {
   hook: UseState,
@@ -33,16 +41,17 @@ export const routeList = {
   memo: Memo,
   createElement: CreateElement,
   lazy: Lazy,
-  test: Test,
+  playground: Playground,
+  // test: Test,
   route: RoutePage,
-}
+};
 
 function getRoutes(routeList: Record<string, any>) {
-  return Object.keys(routeList).map(key => {
-    return <Route key={key} path={`/${key}`} component={routeList[key]} />
-  })
+  return Object.keys(routeList).map((key) => {
+    return <Route key={key} path={`/${key}`} component={routeList[key]} />;
+  });
 }
-export default function() {
+export default function () {
   return (
     //   HashRouter, 而不是 BrowserRouter. HashRouter利用hash切换路由.而BrowserRouter则直接跳转(且没用到history.pushState)
     <HashRouter>
