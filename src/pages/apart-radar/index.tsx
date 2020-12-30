@@ -1,127 +1,73 @@
-import React, { useState, useEffect, useRef } from "react";
-import { EChartOption, ECharts, init } from "echarts";
-import { Table } from "antd";
-
+import React, { useState, useEffect } from "react";
+import { Row, Col } from "antd";
+import Map from "./map/index";
+import Table from "./table/index";
+import Radar from "./radar/index";
+import Side from "./sidebar/index";
 import datas from "./data/index";
 
 import "antd/dist/antd.css";
 import "./index.css";
 
 export default () => {
+  const [radarData, setRadaData] = useState<any[]>(datas);
   const [tableData, setTabelData] = useState<any[]>([]);
-  const chartEl = useRef<HTMLDivElement | null>(null);
-  const instance = useRef<ECharts | null>(null);
-
-  const getOption = (): EChartOption => {
-    // const data
-    // const indicator: any[] = [];
-    const series = datas.map((data) => {
-      return {
-        value: Object.keys(data.score).map((key: any) => data.score[key].data),
-        name: data.name,
-      };
-    });
-    const legend = series.map((serie) => serie.name);
-    return {
-      // title: {
-      //   text: "已看小区评价",
-      // },
-      tooltip: {},
-      legend: {
-        data: legend,
-      },
-      radar: {
-        indicator: [
-          { name: "交通", max: 100 },
-          { name: "环境", max: 100 },
-          { name: "学区", max: 100 },
-          { name: "质量", max: 100 },
-          { name: "房龄", max: 100 },
-          { name: "户型", max: 100 },
-          { name: "升值空间", max: 100 },
-          { name: "配套设施", max: 100 },
-          { name: "性价比", max: 100 },
-        ],
-      },
-      series: [
-        {
-          name: "预算 vs 开销（Budget vs spending）",
-          type: "radar",
-          //   areaStyle: {},
-          // areaStyle: {normal: {}},
-          data: series,
-        },
-      ],
-    };
-  };
+  const [cords, setCords] = useState<number[][]>([]);
+  const [sideData, setSideData] = useState<{ label: string; value: string }[]>(
+    []
+  );
 
   useEffect(() => {
-    if (chartEl.current) {
-      instance.current = init(chartEl.current);
+    // 生成坐标
+    const cords = datas.map((data) => [data.lat, data.lng]);
+    setCords([...cords]);
 
-      instance.current.setOption(getOption());
+    const sideData = datas.map((data) => ({
+      label: data.name,
+      value: data.name,
+    }));
+    setSideData([...sideData]);
 
-      instance.current.on("legendselected", (e: any) => {
-        console.log("e)", e);
-        // handleSelectChange()
-      });
-
-      initTable();
-    }
-  }, []);
-
-  const initTable = () => {
-    const res: any[] = datas.map((data) => ({
+    const tableData: any[] = datas.map((data: any) => ({
       name: data.name,
       zone: `${data.zone}/${data.district}`,
       prise: data.prise,
       advantage: data.advantage,
       disadvatage: data.disadvatage,
     }));
-    setTabelData(res);
+    setTabelData(tableData);
+  }, []);
+
+  const handleSideChange = (selected: any[]) => {
+    // const names = selected.map((item) => item.value);
+    const filtedDatas = datas.filter((data) => selected.includes(data.name));
+
+    const cords = filtedDatas.map((data) => [data.lat, data.lng]);
+    setCords([...cords]);
+
+    const tableData: any[] = filtedDatas.map((data: any) => ({
+      name: data.name,
+      zone: `${data.zone}/${data.district}`,
+      prise: data.prise,
+      advantage: data.advantage,
+      disadvatage: data.disadvatage,
+    }));
+    setTabelData(tableData);
+
+    setRadaData(filtedDatas);
   };
-
-  const handleSelectChange = (selected: string[]) => {
-    console.log("selected", selected);
-  };
-
-  const columns = [
-    {
-      title: "小区名称",
-      dataIndex: "name",
-      key: "name",
-    },
-    {
-      title: "行政区",
-      dataIndex: "zone",
-      key: "zone",
-    },
-    {
-      title: "均价",
-      dataIndex: "prise",
-      key: "prise",
-    },
-    {
-      title: "优点",
-      dataIndex: "advantage",
-      key: "advantage",
-    },
-    {
-      title: "缺点",
-      dataIndex: "disadvatage",
-      key: "disadvatage",
-    },
-  ];
-
   return (
     <div className="apart-radar">
-      <div
-        className="container"
-        ref={(el) => {
-          chartEl.current = el;
-        }}
-      ></div>
-      <Table dataSource={tableData} columns={columns} />;
+      <Side data={sideData} onChange={handleSideChange} />
+      <Row>
+        <Col span={12}>
+          <Radar datas={radarData} />
+        </Col>
+        <Col span={12}>
+          <Map cords={cords} />
+        </Col>
+      </Row>
+      <Table tableData={tableData} />;
     </div>
   );
 };

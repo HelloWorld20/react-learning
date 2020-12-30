@@ -6,6 +6,8 @@ const data: ApartmentData = {
   district: "棠下",
   advantage: "天河，离市中心近",
   disadvatage: "旧、地铁口距离远、小区环境差、周围城中村",
+  lng: 113.384224,
+  lat: 23.133039,
   score: {
     transport: {
       data: 70,

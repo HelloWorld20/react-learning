@@ -6,6 +6,8 @@ const data: ApartmentData = {
   district: "石溪",
   advantage: "恒大物业、小区环境好、性价比高，地铁上盖。直达珠江新城地铁",
   disadvatage: "户型略差",
+  lng: 113.287079,
+  lat: 23.069,
   score: {
     transport: {
       data: 85,

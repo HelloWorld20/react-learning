@@ -6,6 +6,8 @@ const data: ApartmentData = {
   district: "石溪",
   advantage: "小区环境好、保利物业",
   disadvatage: "地铁远、房龄旧",
+  lng: 113.273941,
+  lat: 23.070948,
   score: {
     transport: {
       data: 65,

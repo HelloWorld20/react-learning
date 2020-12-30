@@ -39,6 +39,10 @@ declare interface ApartmentData {
   advantage: string;
   /** 缺点描述 */
   disadvatage: string;
+  /** 经度 */
+  lng: number;
+  /** 纬度 */
+  lat: number;
   /** 展示字段 */
   score: ApartScoreOption;
 }

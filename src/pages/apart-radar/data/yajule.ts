@@ -6,6 +6,8 @@ const data: ApartmentData = {
   district: "南村万博",
   advantage: "小区、房子特别好、学区不错、离交通枢纽南村万博一个地铁站",
   disadvatage: "离地铁口太远，离外面太远，适合养老，不适合我们",
+  lng: 113.36069,
+  lat: 23.01089,
   score: {
     transport: {
       data: 70,
